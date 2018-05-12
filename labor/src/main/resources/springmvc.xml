@@ -12,7 +12,7 @@
 	<mvc:annotation-driven></mvc:annotation-driven>
 	
 	<bean id="render" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-		<property name="prefix" value="/"></property>		
+		<property name="prefix" value="/service/zj/"></property>		
 		<property name="suffix" value=".jsp"></property>
 	</bean>
 	

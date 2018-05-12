@@ -54,13 +54,13 @@
             </TR>
  
  <TR align="center" class="line3"> 
-              <TD width="10%"><bean:write name="info" property="bip_name"/>${userInfo.bip_name}</TD>
-              <TD width="10%"><bean:write name="info" property="bip_citizenid"/>${userInfo.bip_citizenid}</TD>
-              <TD width="10%"><bean:write name="info" property="bip_birthday"/>${userInfo.bip_birthday}</TD>
-              <TD width="10%"><bean:write name="info" property="bip_long"/>${userInfo.bip_long}</TD>
-              <TD width="10%"><bean:write name="info" property="bip_weight"/>${userInfo.bip_weight}</TD>
-              <TD width="10%"><bean:write name="info" property="bip_eyesightleft"/>${userInfo.bip_eyesightleft}</TD>
-              <TD width="10%"><bean:write name="info" property="bip_eyesightright"/>${userInfo.bip_eyesightright}</TD>
+              <TD width="10%"><bean:write name="info" property="bip_name"/>${userInfo.bipName}</TD>
+              <TD width="10%"><bean:write name="info" property="bip_citizenid"/>${userInfo.bipCitizenid}</TD>
+              <TD width="10%"><bean:write name="info" property="bip_birthday"/>${userInfo.bipBirthday}</TD>
+              <TD width="10%"><bean:write name="info" property="bip_long"/>${userInfo.bipLong}</TD>
+              <TD width="10%"><bean:write name="info" property="bip_weight"/>${userInfo.bipWeight}</TD>
+              <TD width="10%"><bean:write name="info" property="bip_eyesightleft"/>${userInfo.bipEyesightleft}</TD>
+              <TD width="10%"><bean:write name="info" property="bip_eyesightright"/>${userInfo.bipEyesightright}</TD>
               </TR>
  </TBODY>
 </TABLE>
@@ -77,13 +77,13 @@
               
              </TR>
    			<TR align="center" class="line3"> 
-              <TD width="10%"><bean:write name="info" property="bip_res_address"/>${userInfo.bip_res_address}</TD>
-              <TD width="10%"><bean:write name="info" property="bip_con_contacttel"/>${userInfo.bip_con_telephone}</TD>
-              <TD width="10%"><bean:write name="info" property="bip_con_mobile"/>${userInfo.bip_con_mobile}</TD>
-              <TD width="10%"><bean:write name="info" property="bip_con_email"/>${userInfo.bip_con_email}</TD>
-              <TD width="10%"><bean:write name="info" property="bip_graduateschool"/>${userInfo.bip_graduateschool}</TD>
-              <TD width="10%"><bean:write name="info" property="bip_subject"/>${userInfo.bip_subject}</TD>
-              <TD width="10%"><bean:write name="info" property="bip_educationallevel2"/>${userInfo.bip_educationallevel2}</TD>
+              <TD width="10%"><bean:write name="info" property="bip_res_address"/>${userInfo.bipResAddress}</TD>
+              <TD width="10%"><bean:write name="info" property="bip_con_contacttel"/>${userInfo.bipConTelephone}</TD>
+              <TD width="10%"><bean:write name="info" property="bip_con_mobile"/>${userInfo.bipConMobile}</TD>
+              <TD width="10%"><bean:write name="info" property="bip_con_email"/>${userInfo.bipConEmail}</TD>
+              <TD width="10%"><bean:write name="info" property="bip_graduateschool"/>${userInfo.bipGraduateschool}</TD>
+              <TD width="10%"><bean:write name="info" property="bip_subject"/>${userInfo.bipSubject}</TD>
+              <TD width="10%"><bean:write name="info" property="bip_educationallevel2"/>${userInfo.bipEducationallevel2}</TD>
             
    			</TR>
  		</TBODY>
@@ -104,10 +104,10 @@
 <logic:present name="list1" scope="request">
 <logic:iterate name="list1" id="inf" scope="request">	               
                <TR  align="center" class="line4"> 
-               <TD width="10%"><bean:write name="inf" property="djtime"/>${userInfo.dsj}</TD>
-               <TD width="10%"><bean:write name="inf" property="djreason"/>${userInfo.dojyy}</TD>
-                 <TD width="10%"><bean:write name="inf" property="jdtime"/>${userInfo.jsj}</TD>
-               <TD width="10%"><bean:write name="inf" property="jdreason"/>${userInfo.jidyy}</TD>
+               <TD width="10%"><bean:write name="inf" property="djtime"/>${djjdInfo.dojsj}</TD>
+               <TD width="10%"><bean:write name="inf" property="djreason"/>${djjdInfo.dojyy}</TD>
+                 <TD width="10%"><bean:write name="inf" property="jdtime"/>${djjdInfo.jidsj}</TD>
+               <TD width="10%"><bean:write name="inf" property="jdreason"/>${djjdInfo.jidyy}</TD>
                </TR>
  </logic:iterate>
 </logic:present>               

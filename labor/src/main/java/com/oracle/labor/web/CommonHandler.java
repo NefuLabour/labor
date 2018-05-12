@@ -7,8 +7,10 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.oracle.labor.common.codetable.LanguageOperation;
 
 @Controller
+@RequestMapping("/common")
 public class CommonHandler {
 
+	
 	//返回文本;
 	@ResponseBody
 	@RequestMapping(value="/service/language",produces="text/html;charset=UTF-8")
@@ -17,4 +19,5 @@ public class CommonHandler {
 		System.out.println(result);
 		return result;
 	}
+	
 }

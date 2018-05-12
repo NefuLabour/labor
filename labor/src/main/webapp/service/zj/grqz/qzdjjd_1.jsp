@@ -40,7 +40,7 @@ function check(myform){
 	var p=document.getElementById("bip_citizenid").value;
 
 	var xhr=new XMLHttpRequest();
-		xhr.open("get","<%=request.getContextPath()%>/service/zj/grqz/grdj_dj.do?bip_citizenid="+p,true);		
+		xhr.open("get","<%=request.getContextPath()%>/qzdjjd/getName?bip_citizenid="+p,true);		
 	xhr.onreadystatechange=function(){
 		if(xhr.readyState==4){
 			var nn=xhr.responseText.split(",");
@@ -62,7 +62,7 @@ function check(myform){
 		}
 		form1.button.disabled = "true";
 		form1.button2.disabled = "true";
-		form1.action="<%=request.getContextPath()%>/service/zj/grqz/grdj_dj.do?flag=selectGrByPid";
+		form1.action="http://localhost:8080/labor/qzdjjd/qzdjjd1";
 		form1.submit();
 	}
 	

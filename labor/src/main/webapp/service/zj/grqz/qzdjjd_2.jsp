@@ -1,6 +1,7 @@
 <%@ page contentType="text/html; charset=UTF-8" %>
 <%@ include file="/common/import.jsp" %>
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <html>
 <head>
@@ -30,20 +31,16 @@
 	function dosubmit(){
 					  
 		var cb = form1.cb;
-		
-				
 		form1.button1.disabled="true";
 		form1.button2.disabled="true";
 		form1.button3.disabled="true";
-	
 		form1.submit();	
-	
 	}
 </script>
 	
 </head>
 <body>
-<form method="post" action="<%=request.getContextPath()%>/service/zj/grqz/grdj_dj.do?flag=DjJd" name="form1">
+<form method="post" action="<%=request.getContextPath()%>/qzdjjd/qzdjjd2/${jddj_user.bipId}" name="form1">
 
 <table width="100%" border="0" cellspacing="0" cellpadding="0">
   <tr>
@@ -87,18 +84,18 @@
             </TR>  
             <TR align="center" class="line4"> 
               <TD width="10%"><input type="checkbox" name="cb" value="1" onclick="either(this,form1.cb)"></TD>
-              <TD width="6%"><a href="javascript:void(null)" style="cursor:hand" onclick="window.open('<%=request.getContextPath()%>/','详细信息','left=100 top=100 width=820,height=469 scrollbars')" >${user.bip_name}</TD>
-              <TD width="6%">${user.sex}</TD>
-              <TD width="16%">${user.bip_birthday}</TD>
-              <TD width="20%">${user.bip_res_address}</TD>
-              <TD width="10%">${user.bip_con_mobile}</TD>
-              <TD width="13%">${user.djsj}</TD>
+              <TD width="6%"><a href="javascript:void(null)" style="cursor:hand" onclick="window.open('<%=request.getContextPath()%>/','详细信息','left=100 top=100 width=820,height=469 scrollbars')" >${jddj_user.bipName}</TD>
+              <TD width="6%">${jddj_user.bipSex}</TD>
+              <TD width="16%">${jddj_user.bipBirthday}</TD>
+              <TD width="20%">${jddj_user.bipResAddress}</TD>
+              <TD width="10%">${jddj_user.bipConMobile}</TD>
+              <TD width="13%"></TD>
          
-              <TD width="6%">${user.s}</TD>
+              <TD width="6%">${(SFDJ eq "1") ? "正常" : "冻结"} </TD>
             </TR>
           </TBODY>
       </TABLE>
- <div id="data" style="display:none" align="center">
+ 	<div id="data" style="display:none" align="center">
 		  <table border="0" cellpadding="0" cellspacing="5" bordercolor="#9DCBEC">
 			
 		  </table>

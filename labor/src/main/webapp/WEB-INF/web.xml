@@ -3,8 +3,7 @@
 	xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:web="http://xmlns.jcp.org/xml/ns/javaee"
 	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd http://xmlns.jcp.org/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
 	version="2.4">
-
-
+	
 	<!-- 字符编码的filter -->
 	<filter>
 		<filter-name>characterEncodingFilter</filter-name>
@@ -37,9 +36,6 @@
 		<load-on-startup>1</load-on-startup>
 	</servlet>
 
-
-
-
 	<!-- Map all requests to the DispatcherServlet for handling -->
 	<servlet-mapping>
 		<servlet-name>example</servlet-name>
@@ -51,10 +47,6 @@
 		<servlet-class>com.oracle.labor.common.AppLoad</servlet-class>
 		<load-on-startup>1</load-on-startup>
 	</servlet>
-
-
-
-
 
 	<!-- needed for ContextLoaderListener -->
 	<context-param>
