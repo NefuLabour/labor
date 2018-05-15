@@ -9,7 +9,7 @@
 <script>
  function delete1(){
      var flag = false;
-		var deldata = form1.pkdata;
+		var deldata = form1.qzbh;
 		if(deldata!=undefined){
 			if(deldata.length!=undefined){
 				for(var i=0;i<deldata.length;i++){
@@ -32,7 +32,7 @@
 			return;
 		}
 		if(window.confirm("您确定要归档吗？")){
-			   form1.action="<%=request.getContextPath()%>/ldlsc_qzgd_gd";
+			   form1.action="<%=request.getContextPath()%>/qzgd/qzgd_2";
 		       form1.button2.disabled = true;
 			   form1.button22.disabled = true; 
 			  
@@ -87,15 +87,15 @@
           <TD width="14%">联系电话</TD>
           <TD width="23%">登记日期</TD>
         </TR>
-        <c:forEach var="b" varStatus="a" items="${list}">
+        <c:forEach var="b" varStatus="a" items="${qzgdVO}">
      <TR class="line4" align="center" > 
           <TD width="6%">${a.count}</TD>
-          <TD width="6%"><INPUT TYPE="checkbox" class="radio" name="pkdata" onclick="" value="${b.qzbh}">${b.qzbh}</TD>
-          <TD width="11%">${b.bip_name}</TD>
-           <TD width="6%">${b.bip_sex}</TD>
-          <TD width="6%">${b.bip_age}</TD>
-          <TD width="13%" >${b.bip_res_address}</TD>
-          <TD width="14%">${b.bip_con_contacttel}</TD>
+          <TD width="6%"><INPUT TYPE="checkbox" class="radio" name="qzbh" onclick="" value="${b.qzbh}">${b.qzbh}</TD>
+          <TD width="11%">${b.bipName}</TD>
+           <TD width="6%">${b.bipSex}</TD>
+          <TD width="6%">${b.bipAge}</TD>
+          <TD width="13%" >${b.bipResAddress}</TD>
+          <TD width="14%">${b.bipConTelephone}</TD>
           <TD width="23%">${b.djsj}</TD>  
         </TR> 
        	</c:forEach>

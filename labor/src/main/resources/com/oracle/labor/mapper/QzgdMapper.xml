@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.oracle.labor.dao.QzgdMapper">
+
+	<select id="queryOne" parameterType="com.oracle.labor.vo.QzgdQueryVO" resultType="com.oracle.labor.vo.QzgdVO">
+		SELECT zj_grqzdjb.qzbh as qzbh, bip_name as bipName,bip_sex as bipSex,bip_age as bipAge,bip_res_address as bipResAddress,bip_con_telephone as bipConTelephone,DJSJ as djsj 
+		from bip INNER JOIN zj_grqzdjb on bip.bip_id = zj_grqzdjb.bip_id 
+	 <trim prefix="where" prefixOverrides="and">
+          <if test="bipCitizenid!=''">
+                bip.bip_citizenid = #{bipCitizenid}
+          </if>
+          <if test="bipName!=''">
+               and bip.bip_name = #{bipName}
+          </if>
+          <if test="sjStart != '' and sjEnd != ''">
+               and  zj_grqzdjb.DJSJ BETWEEN #{sjStart} AND #{sjEnd}
+          </if>
+          <if test="sfdj != null">
+               and  zj_grqzdjb.SFDJ = #{sfdj}
+          </if>
+      </trim>   
+	</select>
+	
+	<update id="executeGd" parameterType="string">
+		update zj_grqzdjb set gdsj = curdate() where qzbh = #{qzbh}
+	
+	</update>
+
+</mapper>

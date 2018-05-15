@@ -10,7 +10,6 @@ import com.oracle.labor.common.codetable.LanguageOperation;
 @RequestMapping("/common")
 public class CommonHandler {
 
-	
 	//返回文本;
 	@ResponseBody
 	@RequestMapping(value="/service/language",produces="text/html;charset=UTF-8")
