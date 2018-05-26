@@ -9,7 +9,8 @@
 
 <script type="text/javascript">
 	$(function(){
-		$("#language").load("../language",{val:"03"});
+		alert("<%=request.getContextPath()%>");
+		$("#language").load("<%=request.getContextPath()%>/common/language",{val:"03"});
 	});
 </script>
 </head>

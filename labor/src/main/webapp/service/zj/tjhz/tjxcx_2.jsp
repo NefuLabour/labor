@@ -1,5 +1,6 @@
 <%@ page contentType="text/html; charset=UTF-8" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <html>
 <head>
 <script type="text/javascript" src="js/jquery-1.11.1.js""></script>
@@ -51,25 +52,31 @@
                 <td width="110">联系电话</td>
                 <td width="150">联系地址</td>
               </tr>
-             <c:forEach var="b"  items="${Info}"  varStatus="state">
-			  <tr align="center" class="line4">
-                <td width="25" >${state.count}</td>
-                <td width="110">${b.bip_citizenid}</td>
-                <td width="70"><a href="">${b.bip_name}</td>
-                <td width="25">${b.sex}</td>
-                <td width="25">${b.bip_age}</td>
-                <td width="155">${b.whcd}</td>
-                <td width="180">${b.gz1}</td>
-                <td width="180"><a href="">${b.bio_name}</td>
-                <td width="100">${b.bio_no}</td>
+              
+  
+              <c:if test="${tjcxVOs!=null && fn:length(tjcxVOs) > 0}">
+             <c:forEach var="b"  items="${tjcxVOs}"  varStatus="state">
+            <tr align="center" class="line4">
+        	    <td width="25" >${state.count}</td>
+                <td width="110">${b.bipCitizenid}</td>
+                <td width="70"><a href="">${b.bipName}</td>
+                <td width="25">${b.bipSex}</td>
+                <td width="25">${b.bipAge}</td>
+                <td width="155">${b.bipEducationallevel2}</td>
+                <td width="180">${b.zygw}</td>
+                <td width="180"><a href="">${b.bioName}</td>
+                <td width="100">${b.bioNo}</td>
                 <td width="80"> ${Info2.cc}</td>
-                <td width="90">${b.tjsj}</td>
-                <td width="180">${b.gwlb1}</td>
-                <td width="90">${b.tjxlx}</td>
-                <td width="110">${b.bip_con_telephone}</td>
-                <td width="150">${b.bip_res_address}</td>
+                <td width="90">${b.tjrq}</td>
+                <td width="180">${b.tjzy}</td>
+                <td width="90">${b.tjlx}</td>
+                <td width="110">${b.bipConTelephone}</td>
+                <td width="150">${b.bipResAddress}</td>
+		 	   
               </tr>
+        
     </c:forEach>
+    </c:if>
             </table>
 <br>
               <table width="100%" border="0" cellspacing="0" cellpadding="0">

@@ -19,7 +19,17 @@
     			}); 
     		
     		});   		
-    	});    
+    	});  
+    	$(function(){
+    		$("#hjxz").load("<%=request.getContextPath()%>/common/Rprtype",{val:"03"});
+    		$("#xb").load("<%=request.getContextPath()%>/common/Sex",{val:"03"});
+    		$("#rylb").load("<%=request.getContextPath()%>/common/Personneltype",{val:"03"});
+    		$("#gzgz").load("<%=request.getContextPath()%>/common/Specialty",{val:"03"});
+    		$("#zdxl1").load("<%=request.getContextPath()%>/common/Educationallevel",{val:"03"});
+    		$("#zgxl2").load("<%=request.getContextPath()%>/common/Educationallevel",{val:"03"});
+    		$("#dwlx").load("<%=request.getContextPath()%>/common/Regtype",{val:"03"});
+    		$("#gwlb").load("<%=request.getContextPath()%>/common/Employtype",{val:"03"});
+    	});
     </script>
     
   <script language="javascript">
@@ -113,7 +123,7 @@ function check(myform){
 
 </head>
 <body>
-<form name="form1" action="<%=request.getContextPath()%>/service/zj/tjhz/tjcx1.do">
+<form name="form1" action="<%=request.getContextPath()%>/tjcx/tjcx_1" method="post">
 <table width="100%" border="0" cellspacing="0" cellpadding="0">
   <tr> 
     <td><table width="98%"  border="0" align="center" cellpadding="0" cellspacing="0">
@@ -137,7 +147,7 @@ function check(myform){
         <tr class="line2">
           <td width="13%" align="right">性　　别</td>
           <td width="13%"><select id="xb" name="xb" style="width:100%">
-				<option value=""/>
+			
 				
           </select>          </td>
           <td width="13%" align="right">户籍性质</td>
@@ -146,9 +156,9 @@ function check(myform){
 				
           </select>          </td>
           <td width="13%" align="right" >年　　龄</td>
-          <td width="13%"><input id="zxnl1" name="zxnl" style="WIDTH: 100%" maxlength="2"></td>
+          <td width="13%"><input id="zxnl1" name="nlStart" style="WIDTH: 100%" maxlength="2"></td>
           <td width="5%" align="center">至</td>
-          <td width="13%"><input id="zdnl2" name="zdnl" style="WIDTH: 100%" maxlength="2"></td>
+          <td width="13%"><input id="zdnl2" name="nlEnd" style="WIDTH: 100%" maxlength="2"></td>
         </tr>
         <tr class="line1">
           <td align="right">人员类别</td>
@@ -161,12 +171,12 @@ function check(myform){
 			<option value="">
           </select>          </td>
           <td align="right">学　　历</td>
-          <td><select id="zdxl1" name="zdxl" style="width:100%">
+          <td><select id="zdxl1" name="zdxl1" style="width:100%">
 				 <option value="">
 				
           </select>          </td>
           <td align="center">至</td>
-          <td><select id="zgxl2" name="zgx2" style="width:100%">
+          <td><select id="zgxl2" name="zgxl2" style="width:100%">
 				<option value="">
 				
           </select>          </td> 
@@ -178,7 +188,7 @@ function check(myform){
 						
             </select></td>
           <td align="right">岗位类别</td>
-          <td><select id="hwlb" name="gwlb" style="WIDTH: 100%">
+          <td><select id="gwlb" name="gwlb" style="WIDTH: 100%">
 						<option value="">请选择</option>
 						
 						</select></td>
@@ -193,8 +203,6 @@ function check(myform){
 		  <option value=""> 
 		  <option value="1">成功 
 		  <option value="0">未成功 
- 
- 
 		  <option value="-1">未回执 
  
  

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.oracle.labor.dao.TuijianMapper">
+
+	<select id="queryTuijian" parameterType="com.oracle.labor.vo.TjcxQueryVO" resultType="com.oracle.labor.vo.TjcxVO">
+		select bip_citizenid as bipCitizenid, bip_name as bipName, bip_sex as bipSex, bip_age as bipAge, bip_educationallevel2 as bipEducationallevel2,bio_name as bioName,bio_no as bioNo,zj_tjxxb.tjsj as tjrq 
+		FROM bip,bio,zj_tjxxb,zj_tjxxhzb where bip_id =
+		(SELECT bip_id from zj_grqzdjb where qzbh =  
+		(SELECT zj_grqzgzb.QZBH from zj_grqzgzb,zj_tjxxb where zj_tjxxb.QZGZBH = zj_grqzgzb.QZGZBH)) and bio_id =
+		(SELECT DWBH from zj_dwzpdjb where zpbh = 
+		(SELECT zj_dwzpgzb.ZPBH from zj_dwzpgzb,zj_tjxxb where zj_tjxxb.ZPGZBH = zj_dwzpgzb.ZPGZBH)) and zj_tjxxb.TJXID = zj_tjxxhzb.TJXID
+          <if test="xb!=''">
+               and bip.bip_sex = #{xb}
+          </if>
+          <if test="hjxz!=''">
+               and bip.bip_hjxz = #{hjxz}
+          </if>
+          <if test="sjStart != '' and sjEnd != ''">
+               and  zj_tjxxb.tjsj BETWEEN #{sjStart} AND #{sjEnd}
+          </if>
+          <if test="sfcg != null">
+               and  zj_tjxxhzb.SFHZ = #{sfcg}
+          </if>   
+	</select>
+	
+</mapper>
